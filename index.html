@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAVAN KI DUNIYA</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #020503;
+    color: #00ff41;
+    font-family: monospace;
+    text-align: center;
+}
+
+header {
+    padding: 22px 10px;
+    border-bottom: 1px solid #00ff41;
+    box-shadow: 0 0 15px #00ff4144;
+}
+
+h1 {
+    font-size: 28px;
+    text-shadow: 0 0 15px #00ff41;
+}
+
+.subtitle {
+    color: #8aff9e;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 25px auto;
+}
+
+.card {
+    border: 1px solid #00ff41;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 18px;
+    background: #061009;
+    box-shadow: 0 0 12px #00ff4122;
+}
+
+.status {
+    color: #00ff41;
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    margin: 7px 0;
+    background: #001c08;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 15px;
+}
+
+button:active {
+    background: #00ff41;
+    color: black;
+}
+
+#terminal {
+    background: #000;
+    color: #00ff41;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    min-height: 130px;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+}
+
+footer {
+    padding: 20px;
+    color: #477f53;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>☠ RAVAN KI DUNIYA ☠</h1>
+    <div class="subtitle">CYBER WORLD • LEARN • EXPLORE</div>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>⚡ SYSTEM DASHBOARD</h2>
+        <p>Status: <span class="status">ONLINE</span></p>
+        <p>Mode: LEARNING</p>
+        <p>Security: DEMO MODE</p>
+        <button onclick="showTime()">CHECK LOCAL TIME</button>
+    </div>
+
+    <div class="card">
+        <h2>⌨ HACKER TERMINAL</h2>
+
+        <div id="terminal">
+            > Welcome to Ravan's Terminal<br>
+            > Demo system ready...<br>
+            > Waiting for command_
+        </div>
+
+        <button onclick="runDemo()">RUN DEMO SCAN</button>
+        <button onclick="showInfo()">ABOUT THIS WEBSITE</button>
+        <button onclick="clearTerminal()">CLEAR TERMINAL</button>
+    </div>
+
+    <div class="card">
+        <h2>🛡 CYBER SAFETY</h2>
+        <p>Learn to protect your phone and accounts.</p>
+        <button onclick="safetyTip()">SHOW SECURITY TIP</button>
+    </div>
+
+</div>
+
+<footer>
+    RAVAN KI DUNIYA © 2026<br>
+    Educational Demo — No Real Hacking
+</footer>
+
+<script>
+const terminal = document.getElementById("terminal");
+
+function addLine(text) {
+    terminal.innerHTML += "<br>> " + text;
+}
+
+function runDemo() {
+    terminal.innerHTML = "> Starting visual demo scan...";
+    setTimeout(() => addLine("Checking demo interface..."), 500);
+    setTimeout(() => addLine("No external systems accessed."), 1000);
+    setTimeout(() => addLine("Demo completed successfully!"), 1500);
+}
+
+function showInfo() {
+    terminal.innerHTML =
+        "> RAVAN KI DUNIYA<br>" +
+        "> A beginner-friendly cyber learning website.<br>" +
+        "> This terminal is a visual simulation.";
+}
+
+function clearTerminal() {
+    terminal.innerHTML = "> Terminal cleared.";
+}
+
+function showTime() {
+    addLine("Your device time: " + new Date().toLocaleTimeString());
+}
+
+function safetyTip() {
+    const tips = [
+        "Never share your OTP with anyone.",
+        "Use unique passwords for important accounts.",
+        "Enable two-step verification.",
+        "Avoid unknown links and APK files."
+    ];
+
+    const tip = tips[Math.floor(Math.random() * tips.length)];
+    addLine("SECURITY TIP: " + tip);
+}
+</script>
+
+</body>
+</html>
